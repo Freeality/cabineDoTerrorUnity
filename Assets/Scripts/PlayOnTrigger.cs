@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayOnTrigger : MonoBehaviour {
 
-    public AudioSource audioFX;
+    private AudioSource audioFX;
+    public GameObject fonte;
 
     void Start() {
-        audioFX = GetComponent<AudioSource>();
+        audioFX = fonte.GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other) {
-        
+
         if (other.gameObject.tag == "Player") {
             audioFX.Play();
         }
