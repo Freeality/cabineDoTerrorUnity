@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DestroyOnTrigger : MonoBehaviour {
 
+    public string otherTag;
+
 	void OnTriggerEnter(Collider other) {
 
-		if (other.gameObject.tag == "Enemy") {
-			Destroy (other.gameObject);
+		if (other.gameObject.tag == otherTag) {
+			Destroy (this.gameObject);
 		}
 	}
 }
