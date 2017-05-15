@@ -6,6 +6,7 @@ public class EnemyMovement:MonoBehaviour {
 
     public AudioClip ataqueAudio;
     public AudioClip seguirAudio;
+    public float esperaParaSumir = 1.0f;
 
     float distanciaParaSeguir = 30.0f;
     float distanciaParaAtaque = 3.0f;
@@ -68,7 +69,7 @@ public class EnemyMovement:MonoBehaviour {
             anim.SetBool("Idle", true);
             anim.SetTrigger("Attack");
 
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(esperaParaSumir);
 
             DestroyObject(this.gameObject);
         }
